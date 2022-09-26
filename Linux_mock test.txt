@@ -1,0 +1,361 @@
+
+
+Linux Programming Mock Test 1
+
+Total points
+
+11/20
+
+ 
+
+Email
+
+*
+
+sanjanapatil2697@gmail.com
+
+ 
+
+Which make command option ignores all errors in commands executed to remark files?
+
+0/1
+
+a) -i
+
+b) -j
+
+ 
+
+c) -k
+
+d) -l
+
+Correct answer
+
+a) -i
+
+ 
+
+The file permission 764 means:
+
+1/1
+
+a) Every one can read, group can execute only and the owner can read and write
+
+b) Every one can read and write, but owner alone can execute
+
+c) Every one can read, group including owner can write, owner alone can execute--------
+
+d) Every one can read and write and execute
+
+ 
+
+What file specifies the order in which to use specified name services?
+
+1/1
+
+A. /etc/services
+
+B. /etc/nsorder
+
+C. /etc/nsswitch.conf----------
+
+D. /etc/hosts
+
+E. None of the above
+
+ 
+
+ A user does a chmod operation on a file. Which of the following is true?
+
+0/1
+
+a) The last accessed time of the file is updated
+
+b) The last modification time of the file is updated
+
+c) The last change time of the file is updated---------
+
+d) None of the mentioned
+
+Correct answer
+
+c) The last change time of the file is updated
+
+ 
+
+	What command is used to count the total number of lines, words, and characters contained in a file?
+
+1/1
+
+A)countw
+
+B) wcount
+
+C)wc---------
+
+D)count p
+
+E.)None of the above
+
+ 
+
+What command is used with vi editor to delete a single character?
+
+1/1
+
+A. x-----
+
+B. y
+
+C. a
+
+D. z
+
+E. None of the above
+
+ 
+
+If we want to get the exit status that specified targets are up to date or not, we have to execute the make command with option
+
+0/1
+
+a) -q------
+
+b) -r
+
+c) -s
+
+d) -t
+
+Correct answer
+
+a) -q
+
+Name
+
+*
+
+Sanjana Patil Stuti Gangwar
+
+ 
+
+The permission -rwSr–r– represented in octal expression will be
+
+0/1
+
+a) 0777
+
+b) 2666-----
+
+c) 4744
+
+d) 4644
+
+Correct answer
+
+d) 4644
+
+ 
+
+In which directory can you store system user default files used for creating user directories?
+
+0/1
+
+A. /usr/tmp
+
+B. /etc/default
+
+C. /etc/skel-------
+
+D. /etc/users
+
+Correct answer
+
+C. /etc/skel
+
+ 
+
+How can you add Amit, a new user, to your system?
+
+0/1
+
+A. Using useradd
+
+B. Using adduser
+
+C. Using linuxconf
+
+D. All of the above-------
+
+E. None of the above
+
+Correct answer
+
+D. All of the above
+
+ 
+
+What command is used with vi editor to replace text from cursor to right
+
+1/1
+
+A. S
+
+B. s
+
+C. R-------
+
+D. r
+
+ 
+
+To feed standard output of one command to standard input of another in a single shell session
+
+0/1
+
+a) IO redirection can be used
+
+b) Named pipes can be used
+
+c) The pipe operator provided by the shell can be used------
+
+d) It can not be done
+
+Correct answer
+
+c) The pipe operator provided by the shell can be used
+
+ 
+
+Effective group id can be set using following permission
+
+0/1
+
+a) 0777
+
+b) 2666--------
+
+c) 4744
+
+d) 1711
+
+Correct answer
+
+b) 2666
+
+ 
+
+ 	How many primary partitions can exist on one drive?
+
+0/1
+
+A. 16
+
+B. 4---------
+
+C. 2
+
+D. 1
+
+ 
+
+Correct answer
+
+B. 4
+
+ 
+
+Which option of make command print the commands that would be executed, but do not execute them?
+
+1/1
+
+a) -m
+
+b) -n----------
+
+c) -o
+
+c) -p
+
+Roll Number
+
+*
+
+229330 / 229349
+
+ 
+
+What command is used to display the characteristics of a process?
+
+1/1
+
+A. au
+
+B. ps------
+
+C. du
+
+D. pid
+
+ 
+
+ What is the command to set the execute permissions to all the files and subdirectories within the directory /home/user1/direct
+
+1/1
+
+a) chmod –r +x /home/user1/direct
+
+b) chmod –R +x /home/user1/direct---------
+
+c) chmod –f –r +x /home/user1/direct
+
+d) chmod –F +x /home/user1/direct
+
+ 
+
+What sign is used to back up over typing errors in vi?
+
+1/1
+
+A. !
+
+B. $
+
+C. #----------
+
+D. @
+
+ 
+
+What is makefile?
+
+1/1
+
+a) makefile describes to the make command that how to compile the program-----------
+
+ 
+
+b) makefile contains various statements related with the compilation of target
+
+c) makefile contains various statements
+
+d) none of the mentioned
+
+ 
+
+The permission -rwxr–r– represented in octal expression will be
+
+1/1
+
+a) 777
+
+b) 666
+
+c) 744------
+
+d) 711
+
+This content is neither created nor endorsed by Google. - Terms of Service - Privacy Policy
+
+Google Forms

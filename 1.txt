@@ -1,0 +1,43 @@
+ass-1 
+In your home directory, create sets of empty practice files 
+•	Create 6 files with names of the form songX.mp3.
+•	Create 6 files with names of the form snapX.jpg.
+•	Create 6 files with names of the form filmX.avi.
+In each set, replace X with the numbers 1 through 6.
+
+2. From your home directory,
+•	Move songs file into your Music subdirectory.
+•	Move snap file into your Pictures subdirectory.
+•	Move your movie files into Videos subdirectory  
+
+3. Create 3 subdirectories for organizing your files named friends,family,work
+4. Copy files (all types ) containing numbers 1 and 2 to the friends folder.
+    Copy files (all types) containing numbers 3 and 4 to the family folder.
+    Copy files (all types) containing numbers 5 and 6 to the work folder.
+
+ASS-2
+
+6. Delete all files in family subdirectory.
+
+7. Delete friends subdirectory
+
+8. Create user tom , bob , sam , prince
+
+9. Create Group dac ,dbda ,ditiss
+
+10. add user
+	
+	Tom in dac
+	Bob in dbda
+	Sam in ditiss
+
+11. login as prince and create iacsd directory  in /tmp and create 4 files in iacsd with name project-1 project-2 upto 4
+
+12. assign permissions to project files as below
+
+	Project-1 – tom should be owner of this
+	Project-2 – dac should be owner of this
+	Project-3 --- others should not have any permission but tom should have rw access
+	Project-4 – dbda group should have rwx permissions.
+	
+
