@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Enter the numbers"
+read num1
+read num2
+read num3
+
+if [ $ num1 -gt $num2 ] && [ &num1 - $num3 ]
+then
+	echo "num1 is maximum" $num1
+
+	elif [ $num 2 -gt $num3 ]
+	echo "num2 is maximum" $num2
+	else
+	echo "num3 is maximum" $num3
+fi

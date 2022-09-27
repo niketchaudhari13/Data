@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Enter the Pricipal"
+read P
+echo "Enter the Rate"
+read R
+echo "Enter the Time"
+read T
+
+SI=$((P*R*T/100))
+
+echo "The SI is" $SI

@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "Enter the number"
+read N
+sum=0
+i=1
+for ((n=1; n<=$N; n++))
+do
+echo $i
+sum=$(($i + $sum))
+
+i=`expr $i + 2`
+
+done
+echo "The sum of odd N natural numbers is" $sum 
+
+
+
+

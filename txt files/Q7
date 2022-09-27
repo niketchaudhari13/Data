@@ -1,0 +1,16 @@
+ #!/bin/bash
+
+echo "enter the number N"
+read N
+
+for ((n=1; n<=$N; n++))
+do
+	for i in {1..10..1}
+	do
+	table=$((i*n))
+echo "The start of table" $table  
+done
+echo "Next table" 
+done
+
+

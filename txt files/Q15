@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo "Enter the marks"
+
+read Phys
+read Chem
+read Math
+read Bio
+read Comp
+
+sum=$((Phys+Chem+Math+Bio+Comp))
+
+perc=$((sum/500))
+
+echo "The percentage is:" $perc
+
+if [ $perc -ge 90 ]
+then
+echo "Grade A"
+
+elif [ $perc -ge 80 ]
+then
+echo "Grade B"
+
+
+elif [ $perc -ge 70 ]
+then
+echo "Grade C"
+
+elif [ $perc -ge 60 ]
+then
+echo "Grade D"
+
+
+elif [ $perc -ge 40 ]
+then
+echo "Grade E"
+
+elif [ $perc -le 40 ]
+then
+echo "Grade F"
+
+fi

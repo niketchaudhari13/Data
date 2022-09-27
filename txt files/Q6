@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "enter the size N"
+read N
+for  i in {1..10..1}
+do
+	table=$((i*N))
+	echo $table
+done
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "enter the size N"
+read N
+
+for ((i=1; i<=N; i++))
+do
+	cube=$((i * i * i))
+
+	echo " cube of $i is $cube"
+done

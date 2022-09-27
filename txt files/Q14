@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Enter the year"
+read num
+
+if [ `expr $num % 4` -eq 0 ]
+then
+	echo "The year is a leap year"
+else
+	echo "The year is not a leap year"
+fi
