@@ -1,0 +1,111 @@
+PL SQL 
+Average Salary 
+ 
+create or replace procedure avg_sal
+  2  (edeptno in number,
+  3  eavg out number)
+  4  as
+  5  begin
+  6  select avg(sal) into eavg from emp where deptno=edeptno;
+  7  DBMS_OUTPUT.PUT_LINE('avgsal:'||eavg);
+  8* end;
+
+
+PL SQL 
+MAX Salary 
+
+create or replace procedure max_sal
+  2  (edeptno in number,
+  3  emax out number)
+  4  as
+  5  begin
+  6  select max(sal) into emax from emp where deptno=edeptno;
+  7  DBMS_OUTPUT.PUT_LINE('MAXsal:'||emax);
+  8* end;
+variable hel number
+execute max_sal(10,:hel);
+
+
+PL SQL 
+AVG Salary from mgr
+
+
+
+create or replace procedure avg_sal_mgr
+  2  (emgrno in number,
+  3  eavg out number)
+  4  as
+  5  begin
+  6  select avg(sal) into eavg from emp where mgrno=emgrno;
+  7  DBMS_OUTPUT.PUT_LINE('avgsal:'||eavg);
+  8* end;
+
+variable hev number
+SQL> execute avg_sal_mgr(7839,:hev);
+avgsal:2758.333333333333333333333333333333333333
+
+
+
+Trigger
+
+ Create table dept_audit(
+  2  deptno number,
+  3  dname varchar2(20),
+  4  Changetime date,
+  5  Uname varchar2(20),
+  6  Action varchar2(20));
+
+Table created.
+
+
+create or replace trigger dept_audit_data
+  2  before insert or update or delete on dept
+  3  for each row
+  4  begin
+  5  if inserting then
+  6     insert into dept_audit(deptno,dname,changetime,uname,action) values(:new.deptno,:new.dname,sysdate,user,'insert');
+  7  elsif deleting then
+  8     insert into dept_audit(deptno,dname,changetime,uname,action) values(:old.deptno,:old.dname,sysdate,user,'delete');
+  9  else
+ 10     insert into dept_audit values(:new.deptno,:new.dname,sysdate,user,'update');
+ 11  end if;
+ 12* end;
+
+
+Function net sal
+
+create or replace function net_sal(hsal in number,hcomm in number) return number
+  2  as
+  3  begin
+  4  return hsal+nvl(hcomm,0)+hsal*0.10+hsal*0.15-0.06*hsal;
+  5* end;
+SQL> /
+
+Function created.
+
+
+select empno,ename,sal,comm,net_sal(sal,comm) as Net_sal from emp;
+
+     EMPNO ENAME             SAL       COMM    NET_SAL
+---------- ---------- ---------- ---------- ----------
+      7369 SMITH             800                   952
+      7499 ALLEN            1600        300       2204
+      7521 WARD             1250        500     1987.5
+      7566 JONES            2975               3540.25
+      7654 MARTIN           1250       1400     2887.5
+      7698 BLAKE            2850                3391.5
+      7782 CLARK            2450                2915.5
+      7788 SCOTT            3000                  3570
+      7839 KING             5000                  5950
+      7844 TURNER           1500          0       1785
+      7876 ADAMS            1100                  1309
+      7900 JAMES             950                1130.5
+      7902 FORD             3000                  3570
+      7934 MILLER           1300                  1547
+      2000 Manjiri          3456               4112.64
+
+15 rows selected.
+
+
+
+

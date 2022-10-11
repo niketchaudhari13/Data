@@ -1,0 +1,283 @@
+1. Write a query to display the first day of the month (in datetime format) three 
+months before the current month.
+Sample current date : 2014-09-03
+Expected result : 2014-06-01
+
+
+select to_char(sysdate,'yyyy-mm-dd') from dual;
+
+TO_CHAR(SY
+----------
+2022-10-10
+
+
+select to_char(add_months(trunc(sysdate,'month'),-3),'yyyy-mm-dd') from dual;
+
+TO_CHAR(AD
+----------
+2022-07-01
+
+
+
+2. Write a query to display the last day of the month (in datetime format) three 
+months before the current month.
+
+ select last_day(sysdate) from dual;
+
+LAST_DAY(
+---------
+31-OCT-22
+
+select add_months(last_day(sysdate),-3) from dual;
+
+ADD_MONTH
+---------
+31-JUL-22
+
+
+3. Write a query to get the distinct Mondays from hiredate in emp tables.
+
+select * from emp where to_char(hiredate,'DAY')='MONDAY   '; ---------------------------------(1) added 3 spaces
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+
+
+
+select * from emp where trim(to_char(hiredate,'DAY'))='MONDAY'; ------------------------------>(2) used trim
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+
+
+
+
+
+4. Write a query to get the first day of the current year.
+
+
+select trunc(sysdate,'year') from dual;
+
+TRUNC(SYS
+---------
+01-JAN-22
+
+
+
+
+5. Write a query to get the last day of the current year
+
+select add_months(trunc(sysdate,'year')-1,12) from dual;
+
+ADD_MONTH
+---------
+31-DEC-22
+
+
+7. Write a query to get the current date in the following format.
+Sample date : 04-sep-2014
+Output : September 4, 2014
+
+
+select to_char(sysdate,'dd-mon-yyyy')from dual;
+
+TO_CHAR(SYS
+-----------
+10-oct-2022
+
+
+select to_char(sysdate,'month dd,yyyy')from dual;
+
+TO_CHAR(SYSDATE,'
+-----------------
+october   10,2022
+
+
+8. Write a query to get the current date in Thursday September 2014 format.
+Thursday September 2014
+
+select to_char(sysdate,'DayMonthyyyy') from dual;
+
+TO_CHAR(SYSDATE,'DAYMO
+----------------------
+Monday   October  2022
+
+
+
+
+9. Write a query to extract the year from the current date.
+
+select extract(year from sysdate) from dual;
+
+EXTRACT(YEARFROMSYSDATE)
+------------------------
+                    2022
+
+
+10. Write a query to get the first name and hire date from employees table 
+where hire date between '1981-07-01' and '1981-10-30'
+
+
+select ename,hiredate from emp where hiredate between to_date('1981-07-01','yyyy-mm-dd') and to_date('1981-10-30','yyyy-mm-dd');
+
+ENAME      HIREDATE
+---------- ---------
+MARTIN     28-SEP-81
+TURNER     08-SEP-81
+
+
+
+11. Write a query to display the current date in the following format.
+Sample output: Thursday 4th September 2014 00:00:00
+
+select to_char(current_timestamp,'Day ddth Month yyyy hh:mm:ss') from dual;
+
+TO_CHAR(CURRENT_TIMESTAMP,'DAYDDTHMONT
+--------------------------------------
+Monday    10th October   2022 12:10:58
+
+
+
+12. Write a query to display the current date in the following format.
+Sample output: 05/09/2014
+
+select to_char(sysdate,'dd/mm/yyyy') from dual;
+
+TO_CHAR(SY
+----------
+10/10/2022
+
+
+
+13. Write a query to display the current date in the following format.
+Sample output: 12:00 AM Sep 5, 2014
+
+
+select to_char(sysdate,'hh:mm AM Mon dd,yyyy')from dual;
+
+TO_CHAR(SYSDATE,'HH:
+--------------------
+12:10 PM Oct 10,2022
+
+
+
+14. Write a query to get the employees who joined in the month of June.
+
+select ename,hiredate from emp where extract (month from hiredate)=6;
+
+ENAME      HIREDATE
+---------- ---------
+CLARK      09-JUN-81
+
+
+15. Write a query to get the years in which more than 10 employees joined.
+
+
+select extract(year from hiredate) from emp group by extract(year from hiredate) having count(*)>=2;
+
+EXTRACT(YEARFROMHIREDATE)
+-------------------------
+                     1982
+                     1981
+
+16. Write a query to get first name of employees who joined in 1987.
+
+
+select ename,hiredate from emp where extract(year from hiredate)=1982;
+
+ENAME      HIREDATE
+---------- ---------
+SCOTT      09-DEC-82
+MILLER     23-JAN-82
+
+
+17. Write a query to get employees whose experience is more than 5 years.
+
+
+select ename,hiredate from emp where months_between(sysdate,hiredate)/12 >10;
+
+ENAME      HIREDATE
+---------- ---------
+SMITH      17-DEC-80
+ALLEN      20-FEB-81
+WARD       22-FEB-81
+JONES      02-APR-81
+MARTIN     28-SEP-81
+BLAKE      01-MAY-81
+CLARK      09-JUN-81
+SCOTT      09-DEC-82
+KING       17-NOV-81
+TURNER     08-SEP-81
+ADAMS      12-JAN-83
+JAMES      03-DEC-81
+FORD       03-DEC-81
+MILLER     23-JAN-82
+
+
+18. Write a query to get employee ID, last name, and date of first salary of the 
+employees.
+select empno,ename,last_day(hiredate) as first_sal from emp;
+
+     EMPNO ENAME      FIRST_SAL
+---------- ---------- ---------
+      7369 SMITH      31-DEC-80
+      7499 ALLEN      28-FEB-81
+      7521 WARD       28-FEB-81
+      7566 JONES      30-APR-81
+      7654 MARTIN     30-SEP-81
+      7698 BLAKE      31-MAY-81
+      7782 CLARK      30-JUN-81
+      7788 SCOTT      31-DEC-82
+      7839 KING       30-NOV-81
+      7844 TURNER     30-SEP-81
+      7876 ADAMS      31-JAN-83
+      7900 JAMES      31-DEC-81
+      7902 FORD       31-DEC-81
+      7934 MILLER     31-JAN-82
+      2000 Manjiri    31-OCT-22
+
+
+19. Write a query to get first name, hire date and experience of the 
+employees.
+Sample table: employees
+
+
+
+select ename,hiredate,round((months_between(sysdate,hiredate))/12) as Experiance from emp;
+
+ENAME      HIREDATE  EXPERIANCE
+---------- --------- ----------
+SMITH      17-DEC-80         42
+ALLEN      20-FEB-81         42
+WARD       22-FEB-81         42
+JONES      02-APR-81         42
+MARTIN     28-SEP-81         41
+BLAKE      01-MAY-81         41
+CLARK      09-JUN-81         41
+SCOTT      09-DEC-82         40
+KING       17-NOV-81         41
+TURNER     08-SEP-81         41
+ADAMS      12-JAN-83         40
+JAMES      03-DEC-81         41
+FORD       03-DEC-81         41
+MILLER     23-JAN-82         41
+Manjiri    02-OCT-22          0
+
+20. Write a query to get the department ID, year, and number of employees 
+joined.
+
+
+select  distinct deptno,extract(year from hiredate),count(*) over (partition by deptno,extract(year from hiredate)) as number_of_employees from emp;
+
+    DEPTNO EXTRACT(YEARFROMHIREDATE) NUMBER_OF_EMPLOYEES
+---------- ------------------------- -------------------
+        20                      1980                   1
+        20                      1982                   1
+        10                      1981                   2
+        10                      2022                   1
+        20                      1983                   1
+        30                      1981                   6
+        20                      1981                   2
+        10                      1982                   1
