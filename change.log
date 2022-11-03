@@ -1,0 +1,113 @@
+Notepad++ v8.4.6 bug/regression-fixes and new features:
+
+1.  Add Change History markers for document saved/unsaved/undone modification.
+2.  Add setting tab color ability.
+3.  Update to Scintilla 5.3.0 and Lexilla 5.1.9    
+4.  Fix "Never" button not showing on Updater dialog regression. 
+5.  Fix a printing selection regression.
+6.  Revamp tab context menu: make it less cluttered by adding sub-menu.
+7.  Fix a security vulnerability.
+8.  Add dark mode support to Choose Color dialog.
+9.  Add a page (tab) for incompatible (unloaded) plugins in Plugin Admin.
+10. Add Plugin list repository link and its version in PluginAdmin dialog.
+11. Fix horizontal bar showing issue while resizing document list's height.
+12. Fix NPPN_DARKMODECHANGED wrong return value to plugins.
+
+
+Get more info on
+https://notepad-plus-plus.org/downloads/v8.4.6/
+
+
+Included plugins:
+
+1.  NppExport v0.4
+2.  Converter v4.4
+3.  Mime Tool v2.8
+
+
+Updater (Installer only):
+
+* WinGup (for Notepad++) v5.2.4
+
+mongoimport --db test --collection movie --file C:\mydata\movie.json
+
+db.createCollection('Name');------------------To create collection
+
+db.Name.insert({empno:1111,ename:'Rahul',qualification:'BTech',salary:30000.00,joindate:ISODate("2000-02-12")});
+
+db.Name.find() -----------------to check
+
+for query
+eg
+db.sample.find({qualification:"PGDAC"})
+
+db.sample.find({salary:{$lt:80000}})
+
+db.sample.find({qualification:'BTech',salary:{$lt:80000}},{_id:0,empno:1,ename:1});
+
+db.sample.find({salary:{$in:[70000,80000]}},{_id:0,empno:1,ename:1});
+
+db.sample.find({ename:/^P/},{_id:0,empno:1,ename:1});
+
+db.sample.find({ename:/r$/},{_id:0,empno:1,ename:1});
+
+
+create keyspace 'name' with replication={'class':'simple strategy','replication.factor':1};
+
+>use name;
+
+>describe keyspace;
+
+>describe tables;
+
+>create table customer(cid in primary key,cname text,mobile text);
+
+>insert into customer(cid,cname,mobile) values(111,'abc','1234567890');
+
+>insert into customer(cid,cname,mobile) values(111,'abc',{'1234567890','0987654321');
+
+>create table employee(
+empid int,
+emp_salary int,
+emp_lastname varchar,
+emp_firstname text,
+emp_dob date,                -------format "yyyy-mm-dd"
+emp_deptno int,
+emp_comm float,
+primary key ((empid,emp_salary),emp_firstname,emp_dob)
+);
+
+
+create or replace procedure cnt_emp(dno in number,cnt out number)
+as
+begin
+select count(*) into cnt from emp where deptno=dno;
+dbms_output.put_line('count:'||cnt);
+end;
+
+----------to execute---------------------
+variable dcnt number
+execute cnt_emp(10,:cnt)
+print dcnt;
+
+
+function 
+
+create or replace function netsal(comm in number,sal in number) return number
+as
+begin
+return floor(sal + nvl(comm,0)+sal*0.10+sal*0.1-sal*0.06);
+end;
+/
+
+select netsal(comm,sal) from emp;
+
+
+Create table student_marks(
+sid number,
+cname varchar2(20),
+marks number(3),
+constraint sid_cname_pk primary key(sid,cname),
+constraint sid_fk foreign key(sid) references student_sept22(sid)
+on delete set null
+)
