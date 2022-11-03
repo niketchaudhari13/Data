@@ -60,3 +60,12 @@ variable dcnt number
 execute cnt_emp(10,:cnt)
 print dcnt;
 _________________________________________________________________________________________
+
+Create table student_marks(
+sid number,
+cname varchar2(20),
+marks number(3),
+constraint sid_cname_pk primary key(sid,cname),
+constraint sid_fk foreign key(sid) references student_sept22(sid)
+on delete set null
+)
