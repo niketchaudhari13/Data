@@ -1,0 +1,62 @@
+mongoimport --db test --collection movie --file C:\mydata\movie.json
+
+db.createCollection('Name');------------------To create collection
+
+db.Name.insert({empno:1111,ename:'Niket',qualification:'BTech',salary:30000.00,joindate:ISODate("2000-02-12")});
+
+db.Name.find() -----------------to check
+
+for query
+eg
+db.sample.find({qualification:"PGDAC"})
+
+db.sample.find({salary:{$lt:80000}})
+
+db.sample.find({qualification:'BTech',salary:{$lt:80000}},{_id:0,empno:1,ename:1});
+
+db.sample.find({salary:{$in:[70000,80000]}},{_id:0,empno:1,ename:1});
+
+db.sample.find({ename:/^P/},{_id:0,empno:1,ename:1});
+
+db.sample.find({ename:/r$/},{_id:0,empno:1,ename:1});
+
+_______________________________________________________________________________________________________
+
+create keyspace 'name' with replication={'class':'simple strategy','replication.factor':1};
+
+>use name;
+
+>describe keyspace;
+
+>describe tables;
+
+>create table customer(cid in primary key,cname text,mobile text);
+
+>insert into customer(cid,cname,mobile) values(111,'abc','1234567890');
+
+>insert into customer(cid,cname,mobile) values(111,'abc',{'1234567890','0987654321');
+
+>create table employee(
+empid int,
+emp_salary int,
+emp_lastname varchar,
+emp_firstname text,
+emp_dob date,                -------format "yyyy-mm-dd"
+emp_deptno int,
+emp_comm float,
+primary key ((empid,emp_salary),emp_firstname,emp_dob)
+);
+____________________________________________________________________________________________________________
+
+create or replace procedure cnt_emp(dno in number,cnt out number)
+as
+begin
+select count(*) into cnt from emp where deptno=dno;
+dbms_output.put_line('count:'||cnt);
+end;
+
+----------to execute---------------------
+variable dcnt number
+execute cnt_emp(10,:cnt)
+print dcnt;
+_________________________________________________________________________________________
